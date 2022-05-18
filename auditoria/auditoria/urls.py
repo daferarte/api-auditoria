@@ -1,3 +1,12 @@
+__author__ = "Daniel Arteaga"
+__copyright__ = "Copyright 2022, Auditoria"
+__credits__ = ["Daniel Arteaga"]
+__license__ = "GPL"
+__version__ = "1.0.0"
+__maintainer__ = "Daniel Arteaga"
+__email__ = "dfarteaga@unicesmag.edu.co"
+__status__ = "Test"
+
 """auditoria URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,6 +22,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+"""
+Manejo de URLS de todo el proyecto incluye las app creadas dentro del proyecto
+"""
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
