@@ -33,4 +33,4 @@ class AuditoriaBaseDatos(models.Model):
         verbose_name_plural = 'Auditorias Bases de Datos'
 
     def __str__(self):
-        return self.name
+        return self.TableName
