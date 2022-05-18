@@ -20,7 +20,7 @@ class AudBaseDatosAdmin(admin.ModelAdmin):
     readonly_fields = ('UpdateDate',)
     search_fields = ('UserName','UpdateDate','OldValue','NewValue','Operation','TableName')
      # list_filter=('visible',)
-    list_display = ('TableName', 'UpdateDate')
+    list_display = ('TableName','UserName', 'UpdateDate')
     ordering = ('-UpdateDate', )
 
 # Register your models here.
