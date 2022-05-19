@@ -34,3 +34,17 @@ class AuditoriaBaseDatos(models.Model):
 
     def __str__(self):
         return self.TableName
+
+class AuditoriaConsultas(models.Model):
+    TableName = models.CharField(max_length=100, verbose_name='Nombre Tabla')
+    UpdateDate = models.DateTimeField(auto_now_add=True, verbose_name='Fecha creación')
+    UserName = models.CharField(max_length=70, verbose_name='Usuario')
+    idtabla = models.BigIntegerField(verbose_name='idTabla')
+    
+
+    class Meta:
+        verbose_name = 'Auditoria consultas'
+        verbose_name_plural = 'Auditorias consultas'
+
+    def __str__(self):
+        return self.TableName
