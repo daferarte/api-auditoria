@@ -40,7 +40,6 @@ class AuditoriaConsultas(models.Model):
     Operation = models.CharField(max_length=6, verbose_name='Operación')
     UpdateDate = models.DateTimeField(auto_now_add=True, verbose_name='Fecha creación')
     UserName = models.CharField(max_length=70, verbose_name='Usuario')
-    idtabla = models.BigIntegerField(verbose_name='idTabla')
     
 
     class Meta:
