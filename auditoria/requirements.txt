@@ -4,3 +4,7 @@ psycopg2-binary==2.8.5
 django-ckeditor
 django-ckeditor-widget
 django-phone-field
+djangorestframework
+djangorestframework-simplejwt 
+django-model-utils
+django-jsonfield

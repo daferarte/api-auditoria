@@ -34,6 +34,7 @@ from django.conf import settings
 urlpatterns = [
     path('aud1t0r/', admin.site.urls),
     path('', include('AudBaseDatos.urls')),
+    path('', include('AudSoftware.urls')),
 ]
 
 # ruta imagenes
