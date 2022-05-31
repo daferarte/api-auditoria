@@ -19,5 +19,5 @@ from .models import AuditoriaSoftware
 
 class AuditoriaSoftwareSerializers(serializers.ModelSerializer):
     class Meta:
-        model = AuditoriaSoftware  
-        exclude = ['is_removed', 'created', 'modified']
+        model = AuditoriaSoftware
+        fields = '__all__'
