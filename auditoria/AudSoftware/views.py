@@ -24,11 +24,6 @@ from django.shortcuts import render
 """
 class AudSoft_APYView(APIView):
 
-    def get(self, request, format=None, *args, **kwargs):
-        auditoria = AuditoriaSoftware.objects.all()
-        serializer = AuditoriaSoftwareSerializers(auditoria, many=True)
-        return Response(serializer.data)
-
     def post(self, request, format=None):
         serializer = AuditoriaSoftwareSerializers(data=request.data)
         if serializer.is_valid():
@@ -41,6 +36,13 @@ class AudSoft_APYView(APIView):
     nos permitira hacer métodos referentes a nuestra auditoria
     métodos para consultar una sola auditoria, editar o eliminar una auditoria con un id determinado o una primary key
 """
+
+class AudSoft_APYView_List(APIView):
+
+    def get(self, request, format=None, *args, **kwargs):
+        auditoria = AuditoriaSoftware.objects.all()
+        serializer = AuditoriaSoftwareSerializers(auditoria, many=True)
+        return Response(serializer.data)
 class AudSoft_APIView_Detail(APIView):
 
     def get_object(self, pk):
