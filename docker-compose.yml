@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   auditoria:
+    container_name: docker_excea
     build: ./auditoria
     command: python manage.py runserver 0.0.0.0:8000
     volumes:

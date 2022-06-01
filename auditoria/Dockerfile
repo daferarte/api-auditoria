@@ -1,6 +1,12 @@
 # pull official base image
 FROM python:3.8.3-alpine
 
+RUN apk add --update \
+    tzdata
+
+RUN cd /usr/share/zoneinfo
+RUN cp /usr/share/zoneinfo/America/Bogota /etc/localtime
+
 # set work directory
 WORKDIR /usr/src/auditoria
 
