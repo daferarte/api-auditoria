@@ -8,7 +8,7 @@ __email__ = "dfarteaga@unicesmag.edu.co"
 __status__ = "Test"
 
 from django.contrib import admin
-from .models import AuditoriaBaseDatos, AuditoriaMoodle, AuditoriaSoftware
+from .models import AuditoriaMoodle, AuditoriaSoftware
 
 # Register your models here.
 
