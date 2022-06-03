@@ -31,4 +31,5 @@ class AudMoodleAdmin(admin.ModelAdmin):
     ordering = ('-fecha', )
 
 # Register your models here.
-admin.site.register(AuditoriaSoftware, AuditoriaMoodle, AudSoftwareAdmin, AudMoodleAdmin)
+admin.site.register(AuditoriaSoftware, AudSoftwareAdmin)
+admin.site.register(AuditoriaMoodle, AudMoodleAdmin)
