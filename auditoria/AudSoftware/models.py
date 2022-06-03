@@ -56,4 +56,4 @@ class AuditoriaMoodle(models.Model):
         verbose_name_plural = 'Auditorias moodle'
 
     def __str__(self):
-        return self.fecha
+        return self.usuario
