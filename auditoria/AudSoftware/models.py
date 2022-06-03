@@ -35,3 +35,25 @@ class AuditoriaSoftware(models.Model):
 
     def __str__(self):
         return self.modulo
+
+"""
+    @Class AuditoriaMoodle
+    metodo que crea el ORM de la base de datos para auditoria de moodle
+    Charfield es equivalente a varchar
+    DateTime es equivalente a date
+    BigIntegerField es equivalente a big int
+    jsonfield campo equivalente json
+    para mas ayuda consultar la documentacion de Django
+"""
+class AuditoriaMoodle(models.Model):
+    aplicativo = models.CharField(max_length=10, verbose_name='Aplicativo')
+    fecha = models.DateTimeField(auto_now_add=True, verbose_name='Fecha creación')
+    usuario = jsonfield.JSONField()
+    
+
+    class Meta:
+        verbose_name = 'Auditoria moodle'
+        verbose_name_plural = 'Auditorias moodle'
+
+    def __str__(self):
+        return self.fecha

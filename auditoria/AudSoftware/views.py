@@ -19,7 +19,6 @@ from django.shortcuts import render
 
 """
     @Class AudSoft_APYView
-    clase responderá a la petición GET que traera el listado de nuestra auditoria 
     y el método POST que permitirá guardar registros en la base de datos. 
 """
 class AudSoft_APYView(APIView):
@@ -31,18 +30,23 @@ class AudSoft_APYView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-"""
-    @Class AudSoft_APIView_Detail
-    nos permitira hacer métodos referentes a nuestra auditoria
-    métodos para consultar una sola auditoria, editar o eliminar una auditoria con un id determinado o una primary key
-"""
 
+"""
+    @Class AudSoft_APYView_List
+    clase responderá a la petición GET que traera el listado de nuestra auditoria
+"""
 class AudSoft_APYView_List(APIView):
 
     def get(self, request, format=None, *args, **kwargs):
         auditoria = AuditoriaSoftware.objects.all()
         serializer = AuditoriaSoftwareSerializers(auditoria, many=True)
         return Response(serializer.data)
+    
+"""
+    @Class AudSoft_APIView_Detail
+    nos permitira hacer métodos referentes a nuestra auditoria
+    métodos para consultar una sola auditoria, editar o eliminar una auditoria con un id determinado o una primary key
+"""
 class AudSoft_APIView_Detail(APIView):
 
     def get_object(self, pk):
