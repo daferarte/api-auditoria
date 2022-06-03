@@ -11,8 +11,8 @@ __status__ = "Test"
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import AuditoriaSoftwareSerializers
-from .models import AuditoriaSoftware
+from .serializers import AuditoriaSoftwareSerializers, AuditoriaMoodleSerializers
+from .models import AuditoriaSoftware, AuditoriaMoodle
 from rest_framework import status
 from django.http import Http404
 from django.shortcuts import render
@@ -29,6 +29,20 @@ class AudSoft_APYView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+"""
+    @Class AudSoft_APYView
+    y el método POST que permitirá guardar registros en la base de datos. 
+"""
+class AudMoodle_APYView(APIView):
+
+    def post(self, request, format=None):
+        serializer = AuditoriaMoodleSerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 """
